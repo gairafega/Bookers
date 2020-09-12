@@ -1,0 +1,23 @@
+<h1>Editing Book</h1>
+<!-- form_for部分 -->
+<%= form_for(@book, url:"/books/#{@book.id}") do |f| %>
+<%= render 'layouts/error_messages', model: f.object %>
+
+<div class="Action">
+  <div>Title</div>
+  <%= f.text_field :title %>
+</div>
+
+<div class="Action">
+  <div>Body</div>
+  <%= f.text_area :body %>
+</div>
+
+<div class="Action">
+  <div></div>
+  <%= f.submit 'Update Book' %>
+</div>
+
+<% end %>
+<%= link_to 'Show', "/books/#{@book.id}" %> | <a href="/books">Back</a>
+
